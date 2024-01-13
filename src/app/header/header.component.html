@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="header">
+  <!-- Left side: Menu Icon with Dropdown -->
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="selectMode('Admin mode')">Admin mode</button>
+    <button mat-menu-item (click)="selectMode('Game mode')">Game mode</button>
+  </mat-menu>
+
+  <!-- Center: Title -->
+  <span class="title">Lil Linguist</span>
+
+  <!-- Right side: User Icon Button -->
+  <button mat-icon-button (click)="openUserMenu()">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>

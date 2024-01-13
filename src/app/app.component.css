@@ -1,0 +1,28 @@
+/* styles.css (or your global stylesheet) */
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the container takes at least the full viewport height */
+}
+
+app-header {
+  flex: 0 0 auto; /* Header does not grow or shrink, maintains its height */
+}
+
+app-main {
+  flex: 1; /* Main content grows to fill remaining space */
+  padding: 20px; /* Add padding as needed */
+}
+
+app-footer {
+  flex: 0 0 auto; /* Footer does not grow or shrink, maintains its height */
+  margin-top: auto; /* Push the footer to the bottom */
+}

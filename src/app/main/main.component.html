@@ -1,0 +1,69 @@
+<!-- main.component.html -->
+
+<div class="main-container">
+  <!-- 1. Header "Categories" -->
+  <h2 class="header">Categories</h2>
+
+  <!-- 2. Table (mat-table) -->
+  <mat-table [dataSource]="categories" class="mat-elevation-z8 table">
+    <!-- Category Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell class="header-cell" *matHeaderCellDef>
+        Category Name
+      </mat-header-cell>
+      <mat-cell class="cell" *matCellDef="let category">
+        {{ category.name }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- No. of Words Column -->
+    <ng-container matColumnDef="wordCount">
+      <mat-header-cell class="header-cell" *matHeaderCellDef>
+        No. of Words
+      </mat-header-cell>
+      <mat-cell class="cell" *matCellDef="let category">
+        {{ category.words.size }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Last Edit Date Column -->
+    <ng-container matColumnDef="lastEditDate">
+      <mat-header-cell class="header-cell" *matHeaderCellDef>
+        Last Edit Date
+      </mat-header-cell>
+      <mat-cell class="cell" *matCellDef="let category">
+        {{ category.updated_at | date : "medium" }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell class="header-cell" *matHeaderCellDef>
+        Actions
+      </mat-header-cell>
+      <mat-cell class="cell" *matCellDef="let category">
+        <!-- Add your action buttons/icons here -->
+        <button mat-icon-button (click)="editCategory(category)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteCategory(category)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Row Definition -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+  <!-- 3. Button ("New Category") -->
+  <button
+    mat-raised-button
+    color="primary"
+    class="new-category-button"
+    (click)="createNewCategory()"
+  >
+    New Category
+  </button>
+</div>

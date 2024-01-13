@@ -1,0 +1,33 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black;
+  /* height: 60%; */
+}
+
+.header {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.table {
+  width: 80%; /* Adjust as needed */
+  margin: 20px;
+}
+
+.cell {
+  padding: 20px; /* Adjust the padding as needed */
+}
+.header-cell {
+  font-size: large; /* Adjust the font size as needed */
+  padding: 30px; /* Adjust the padding as needed */
+}
+
+.new-category-button {
+  margin: 20px;
+  font-size: x-large;
+  padding: 30px;
+}
